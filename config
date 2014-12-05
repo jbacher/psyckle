@@ -1,0 +1,11 @@
+ngx_addon_name=ngx_http_psyckle_module
+psyckle_libs="-lstdc++ -lopencv_core -lopencv_imgproc -lopencv_imgcodecs"
+
+HTTP_AUX_FILTER_MODULES="$HTTP_AUX_FILTER_MODULES $ngx_addon_name"
+
+#HTTP_FILTER_MODULES="$HTTP_FILTER_MODULES $ngx_addon_name"
+
+NGX_ADDON_SRCS="$NGX_ADDON_SRCS $ngx_addon_dir/ngx_psyckle.cpp"
+NGX_ADDON_DEPS="$NGX_ADDON_DEPS $ngx_addon_dir/ngx_psyckle.h"
+
+CORE_LIBS="$CORE_LIBS $psyckle_libs"
